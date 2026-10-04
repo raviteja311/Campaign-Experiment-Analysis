@@ -1,0 +1,68 @@
+# Every tunable value in the analysis lives here. Nothing below is read from
+# the outcome data: these values were fixed in the pre-registered test plan
+# (docs/TEST_PLAN.md) before any outcome was analysed.
+
+data:
+  # Canonical source: the file Kevin Hillstrom published for the 2008
+  # MineThatData challenge. Plain HTTP only, so integrity comes from the
+  # pinned SHA-256 below, not from the transport.
+  primary_url: "http://www.minethatdata.com/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv"
+  primary_sha256: "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece"
+  # HTTPS mirror (gzipped, the copy scikit-uplift uses). Same 64,000 rows;
+  # floats are written as 0.0 rather than 0, so it has its own digest.
+  mirror_url: "https://hillstorm1.s3.us-east-2.amazonaws.com/hillstorm_no_indices.csv.gz"
+  mirror_sha256: "bab6578f60db5d792f1c2372c502f029152a5249cf5ea84390f3b7f885d7234f"
+  cache_dir: "data/raw"
+  timeout_seconds: 60
+  retries: 3
+
+experiment:
+  control_arm: "No E-Mail"
+  treatment_arms: ["Mens E-Mail", "Womens E-Mail"]
+  # Planned allocation: one third each.
+  expected_allocation: [0.3333333333, 0.3333333333, 0.3333333333]
+  primary_metric: "spend"
+  secondary_metrics: ["conversion", "visit"]
+  alpha: 0.05
+  power: 0.80
+  # SRM is a validity check, not a hypothesis about the product, so it uses
+  # the conventional strict threshold.
+  srm_alpha: 0.001
+  # |standardised mean difference| above this flags a covariate imbalance.
+  balance_smd_threshold: 0.1
+  # Pre-period covariate for CUPED: dollars spent in the year before the test.
+  cuped_covariate: "history"
+  # Pre-specified segments for heterogeneous effects (Holm-corrected).
+  segments: ["newbie", "channel", "purchase_line", "zip_code"]
+  # Sensitivity check for the heavy-tailed primary metric.
+  winsorize_quantile: 0.99
+
+bootstrap:
+  n_resamples: 2000
+  confidence: 0.95
+  seed: 20080320
+
+economics:
+  # ASSUMPTIONS, not data. The dataset records revenue, not margin or cost.
+  # The memo reports a break-even margin so the decision does not hinge on
+  # these two numbers being right.
+  gross_margin: 0.40
+  cost_per_email: 0.05
+  # Rollout base for scaling per-customer effects to a campaign total.
+  rollout_customers: 100000
+
+peeking:
+  n_simulations: 2000
+  n_per_arm: 21000
+  n_looks: 20
+  seed: 7
+
+uplift:
+  treatment_arm: "Womens E-Mail"
+  outcome: "visit"
+  test_size: 0.3
+  seed: 42
+  n_bins: 10
+
+report:
+  output_dir: "reports"
