@@ -49,13 +49,22 @@ marketing team wants to know:
 | Guardrail (validity) | Sample ratio | Arm counts versus the planned 1/3 split |
 | Guardrail (validity) | Covariate balance | Standardised mean difference of every pre-period covariate |
 | Guardrail (harm) | Segment no-harm | No pre-specified segment shows a significant **negative** revenue effect |
-| Guardrail (robustness) | Winsorised revenue | The primary result holds when spend is capped at its 99th percentile |
+| Guardrail (robustness) | Winsorised revenue | The primary result holds when spend is capped at the 99th percentile of **positive** spend, pooled across arms (see note below) |
 
 Revenue per customer is the primary metric because it is the one the
 business decision is made on. Revenue *per converter* (average order value)
 is **not** used: it conditions on a post-treatment outcome, so the
 customers in it differ between arms and the comparison is no longer
 randomised.
+
+**Clarification added before analysis (second commit to this file).** The
+first version said "capped at its 99th percentile". Purchases are rare (the
+planning range above is 0.5% to 2% conversion), so the 99th percentile of
+spend over *all* customers is likely $0, and that cap would erase every
+purchase rather than trim the tail. The cap is therefore the 99th percentile
+of spend among customers who spent anything, computed once on all arms
+pooled so treatment and control are capped at the same dollar value. This
+was changed before any outcome was computed in this repository.
 
 The dataset contains no unsubscribe or complaint data. In a real campaign
 those would be the first harm guardrails; here the segment no-harm check

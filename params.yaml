@@ -34,7 +34,8 @@ experiment:
   cuped_covariate: "history"
   # Pre-specified segments for heterogeneous effects (Holm-corrected).
   segments: ["newbie", "channel", "purchase_line", "zip_code"]
-  # Sensitivity check for the heavy-tailed primary metric.
+  # Sensitivity check for the heavy-tailed primary metric: cap spend at this
+  # quantile of POSITIVE spend, pooled across arms (TEST_PLAN.md, section 3).
   winsorize_quantile: 0.99
 
 bootstrap:
