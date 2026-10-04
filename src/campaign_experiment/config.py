@@ -84,6 +84,11 @@ class UpliftConfig:
 
 
 @dataclass(frozen=True)
+class PosthocConfig:
+    winsorize_quantile: float
+
+
+@dataclass(frozen=True)
 class ReportConfig:
     output_dir: str
 
@@ -96,6 +101,7 @@ class Config:
     economics: EconomicsConfig
     peeking: PeekingConfig
     uplift: UpliftConfig
+    posthoc: PosthocConfig
     report: ReportConfig
 
     def resolve(self, relative: str) -> Path:
@@ -130,8 +136,9 @@ def _validate(cfg: Config) -> None:
         raise ConfigError("expected_allocation must sum to 1")
     if len(set(exp.arms)) != len(exp.arms):
         raise ConfigError("arm names must be unique")
-    if not 0.5 < exp.winsorize_quantile < 1:
-        raise ConfigError("winsorize_quantile must be in (0.5, 1)")
+    for q in (exp.winsorize_quantile, cfg.posthoc.winsorize_quantile):
+        if not 0.5 < q < 1:
+            raise ConfigError("winsorize_quantile must be in (0.5, 1)")
     if not 0 < cfg.bootstrap.confidence < 1 or cfg.bootstrap.n_resamples < 100:
         raise ConfigError("bootstrap needs confidence in (0, 1) and at least 100 resamples")
     if not 0 < cfg.economics.gross_margin <= 1 or cfg.economics.cost_per_email < 0:
@@ -156,6 +163,7 @@ def load_config(path: Path | str = PARAMS_PATH) -> Config:
         economics=_section(raw, "economics", EconomicsConfig),
         peeking=_section(raw, "peeking", PeekingConfig),
         uplift=_section(raw, "uplift", UpliftConfig),
+        posthoc=_section(raw, "posthoc", PosthocConfig),
         report=_section(raw, "report", ReportConfig),
     )
     _validate(cfg)

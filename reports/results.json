@@ -1,0 +1,1911 @@
+{
+  "version": "0.1.0",
+  "dataset": {
+    "rows": 64000,
+    "arms": [
+      "No E-Mail",
+      "Mens E-Mail",
+      "Womens E-Mail"
+    ],
+    "duplicate_rows_kept": 6562
+  },
+  "arm_metrics": [
+    {
+      "arm": "No E-Mail",
+      "n": 21306,
+      "visits": 2262.0,
+      "conversions": 122.0,
+      "revenue": 13908.33,
+      "revenue_per_customer": 0.6527893551,
+      "revenue_var": 134.286371853,
+      "visit_rate": 0.1061672768,
+      "conversion_rate": 0.0057260865,
+      "order_value": 114.002704918,
+      "share_of_customers": 0.33290625,
+      "share_of_revenue": 0.2067903167
+    },
+    {
+      "arm": "Mens E-Mail",
+      "n": 21307,
+      "visits": 3894.0,
+      "conversions": 267.0,
+      "revenue": 30311.69,
+      "revenue_per_customer": 1.422616511,
+      "revenue_var": 315.2117988656,
+      "visit_rate": 0.1827568405,
+      "conversion_rate": 0.0125310931,
+      "order_value": 113.526928839,
+      "share_of_customers": 0.332921875,
+      "share_of_revenue": 0.4506769665
+    },
+    {
+      "arm": "Womens E-Mail",
+      "n": 21387,
+      "visits": 3238.0,
+      "conversions": 189.0,
+      "revenue": 23038.11,
+      "revenue_per_customer": 1.077201571,
+      "revenue_var": 228.4966748347,
+      "visit_rate": 0.1514003834,
+      "conversion_rate": 0.0088371441,
+      "order_value": 121.8947619048,
+      "share_of_customers": 0.334171875,
+      "share_of_revenue": 0.3425327169
+    }
+  ],
+  "validity": {
+    "srm": {
+      "observed": {
+        "No E-Mail": 21306,
+        "Mens E-Mail": 21307,
+        "Womens E-Mail": 21387
+      },
+      "expected": {
+        "No E-Mail": 21333.3333312,
+        "Mens E-Mail": 21333.3333312,
+        "Womens E-Mail": 21333.3333312
+      },
+      "chi2": 0.20253125,
+      "p_value": 0.9036929576,
+      "alpha": 0.001,
+      "passed": true
+    },
+    "balance": [
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "recency",
+        "mean_control": 5.7496949216,
+        "mean_treatment": 5.7736424649,
+        "smd": 0.0068315325,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "history",
+        "mean_control": 240.8826532432,
+        "mean_treatment": 242.8359309147,
+        "smd": 0.0076128683,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "mens",
+        "mean_control": 0.5532244438,
+        "mean_treatment": 0.5509456986,
+        "smd": -0.0045823256,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "womens",
+        "mean_control": 0.5476391627,
+        "mean_treatment": 0.5514150279,
+        "smd": 0.0075889297,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "newbie",
+        "mean_control": 0.5019712757,
+        "mean_treatment": 0.5015253203,
+        "smd": -0.0008918954,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "zip_code_Rural",
+        "mean_control": 0.1473293908,
+        "mean_treatment": 0.1522035012,
+        "smd": 0.0136590004,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "zip_code_Surburban",
+        "mean_control": 0.4517506806,
+        "mean_treatment": 0.4459097949,
+        "smd": -0.0117433567,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "zip_code_Urban",
+        "mean_control": 0.4009199287,
+        "mean_treatment": 0.4018867039,
+        "smd": 0.0019722316,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "channel_Multichannel",
+        "mean_control": 0.1223129635,
+        "mean_treatment": 0.1209461679,
+        "smd": -0.0041815364,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "channel_Phone",
+        "mean_control": 0.4377640101,
+        "mean_treatment": 0.4336602994,
+        "smd": -0.0082759923,
+        "balanced": true
+      },
+      {
+        "treatment": "Mens E-Mail",
+        "covariate": "channel_Web",
+        "mean_control": 0.4399230264,
+        "mean_treatment": 0.4453935326,
+        "smd": 0.0110135884,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "recency",
+        "mean_control": 5.7496949216,
+        "mean_treatment": 5.7678496283,
+        "smd": 0.0051800132,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "history",
+        "mean_control": 240.8826532432,
+        "mean_treatment": 242.5366334689,
+        "smd": 0.0065107225,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "mens",
+        "mean_control": 0.5532244438,
+        "mean_treatment": 0.548931594,
+        "smd": -0.0086307312,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "womens",
+        "mean_control": 0.5476391627,
+        "mean_treatment": 0.5501005284,
+        "smd": 0.004946314,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "newbie",
+        "mean_control": 0.5019712757,
+        "mean_treatment": 0.5032496376,
+        "smd": 0.0025567009,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "zip_code_Rural",
+        "mean_control": 0.1473293908,
+        "mean_treatment": 0.148735213,
+        "smd": 0.0039585056,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "zip_code_Surburban",
+        "mean_control": 0.4517506806,
+        "mean_treatment": 0.4512086782,
+        "smd": -0.0010891197,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "zip_code_Urban",
+        "mean_control": 0.4009199287,
+        "mean_treatment": 0.4000561089,
+        "smd": -0.0017628666,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "channel_Multichannel",
+        "mean_control": 0.1223129635,
+        "mean_treatment": 0.1205872726,
+        "smd": -0.0052828971,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "channel_Phone",
+        "mean_control": 0.4377640101,
+        "mean_treatment": 0.4420442325,
+        "smd": 0.0086228333,
+        "balanced": true
+      },
+      {
+        "treatment": "Womens E-Mail",
+        "covariate": "channel_Web",
+        "mean_control": 0.4399230264,
+        "mean_treatment": 0.4373684949,
+        "smd": -0.0051478639,
+        "balanced": true
+      }
+    ],
+    "max_abs_smd": 0.0136590004,
+    "all_balanced": true
+  },
+  "primary": [
+    {
+      "arm": "Mens E-Mail",
+      "metric": "spend",
+      "method": "welch",
+      "n_control": 21306,
+      "n_treatment": 21307,
+      "control_mean": 0.6527893551,
+      "treatment_mean": 1.422616511,
+      "diff": 0.7698271559,
+      "se": 0.1452465602,
+      "ci_low": 0.4851397326,
+      "ci_high": 1.0545145792,
+      "statistic": 5.3001403584,
+      "p_value": 1.164e-07,
+      "relative_lift": 1.1792887704,
+      "boot_ci_low": 0.4962689821,
+      "boot_ci_high": 1.0565483615,
+      "p_holm": 2.328e-07,
+      "significant": true
+    },
+    {
+      "arm": "Womens E-Mail",
+      "metric": "spend",
+      "method": "welch",
+      "n_control": 21306,
+      "n_treatment": 21387,
+      "control_mean": 0.6527893551,
+      "treatment_mean": 1.077201571,
+      "diff": 0.4244122159,
+      "se": 0.1303328585,
+      "ci_low": 0.1689567899,
+      "ci_high": 0.679867642,
+      "statistic": 3.256371576,
+      "p_value": 0.0011293971,
+      "relative_lift": 0.6501518639,
+      "boot_ci_low": 0.1660962108,
+      "boot_ci_high": 0.6831946533,
+      "p_holm": 0.0011293971,
+      "significant": true
+    }
+  ],
+  "winsorized": {
+    "cap": 499.0,
+    "quantile": 0.99,
+    "results": [
+      {
+        "arm": "Mens E-Mail",
+        "metric": "spend_winsorized",
+        "method": "welch",
+        "n_control": 21306,
+        "n_treatment": 21307,
+        "control_mean": 0.6527893551,
+        "treatment_mean": 1.422616511,
+        "diff": 0.7698271559,
+        "se": 0.1452465602,
+        "ci_low": 0.4851397326,
+        "ci_high": 1.0545145792,
+        "statistic": 5.3001403584,
+        "p_value": 1.164e-07,
+        "relative_lift": 1.1792887704,
+        "p_holm": 2.328e-07,
+        "significant": true
+      },
+      {
+        "arm": "Womens E-Mail",
+        "metric": "spend_winsorized",
+        "method": "welch",
+        "n_control": 21306,
+        "n_treatment": 21387,
+        "control_mean": 0.6527893551,
+        "treatment_mean": 1.077201571,
+        "diff": 0.4244122159,
+        "se": 0.1303328585,
+        "ci_low": 0.1689567899,
+        "ci_high": 0.679867642,
+        "statistic": 3.256371576,
+        "p_value": 0.0011293971,
+        "relative_lift": 0.6501518639,
+        "p_holm": 0.0011293971,
+        "significant": true
+      }
+    ]
+  },
+  "top_coding": {
+    "max_spend": 499.0,
+    "purchases_at_max": 12,
+    "purchases": 578,
+    "planned_cap_binding": false
+  },
+  "posthoc_winsorized": {
+    "cap": 362.2,
+    "quantile": 0.95,
+    "results": [
+      {
+        "arm": "Mens E-Mail",
+        "metric": "spend_winsorized",
+        "method": "welch",
+        "n_control": 21306,
+        "n_treatment": 21307,
+        "control_mean": 0.6294532057,
+        "treatment_mean": 1.3668996105,
+        "diff": 0.7374464048,
+        "se": 0.1341601479,
+        "ci_low": 0.4744886789,
+        "ci_high": 1.0004041306,
+        "statistic": 5.4967620126,
+        "p_value": 3.89e-08,
+        "relative_lift": 1.1715666838,
+        "p_holm": 7.79e-08,
+        "significant": true
+      },
+      {
+        "arm": "Womens E-Mail",
+        "metric": "spend_winsorized",
+        "method": "welch",
+        "n_control": 21306,
+        "n_treatment": 21387,
+        "control_mean": 0.6294532057,
+        "treatment_mean": 1.0429424417,
+        "diff": 0.413489236,
+        "se": 0.121355924,
+        "ci_low": 0.1756287765,
+        "ci_high": 0.6513496955,
+        "statistic": 3.4072439362,
+        "p_value": 0.0006568723,
+        "relative_lift": 0.6569022642,
+        "p_holm": 0.0006568723,
+        "significant": true
+      }
+    ]
+  },
+  "secondary": [
+    {
+      "arm": "Mens E-Mail",
+      "metric": "conversion",
+      "method": "z",
+      "n_control": 21306,
+      "n_treatment": 21307,
+      "control_mean": 0.0057260865,
+      "treatment_mean": 0.0125310931,
+      "diff": 0.0068050065,
+      "se": 0.0009208512,
+      "ci_low": 0.0050001714,
+      "ci_high": 0.0086098417,
+      "statistic": 7.3851144109,
+      "p_value": 0.0,
+      "relative_lift": 1.1884218763,
+      "p_holm": 0.0,
+      "significant": true
+    },
+    {
+      "arm": "Womens E-Mail",
+      "metric": "conversion",
+      "method": "z",
+      "n_control": 21306,
+      "n_treatment": 21387,
+      "control_mean": 0.0057260865,
+      "treatment_mean": 0.0088371441,
+      "diff": 0.0031110575,
+      "se": 0.0008226578,
+      "ci_low": 0.0014986778,
+      "ci_high": 0.0047234372,
+      "statistic": 3.7795609584,
+      "p_value": 0.0001571051,
+      "relative_lift": 0.5433130437,
+      "p_holm": 0.0001571051,
+      "significant": true
+    },
+    {
+      "arm": "Mens E-Mail",
+      "metric": "visit",
+      "method": "z",
+      "n_control": 21306,
+      "n_treatment": 21307,
+      "control_mean": 0.1061672768,
+      "treatment_mean": 0.1827568405,
+      "diff": 0.0765895637,
+      "se": 0.0033858084,
+      "ci_low": 0.0699535012,
+      "ci_high": 0.0832256261,
+      "statistic": 22.4860408272,
+      "p_value": 0.0,
+      "relative_lift": 0.7214046168,
+      "p_holm": 0.0,
+      "significant": true
+    },
+    {
+      "arm": "Womens E-Mail",
+      "metric": "visit",
+      "method": "z",
+      "n_control": 21306,
+      "n_treatment": 21387,
+      "control_mean": 0.1061672768,
+      "treatment_mean": 0.1514003834,
+      "diff": 0.0452331066,
+      "se": 0.0032343864,
+      "ci_low": 0.0388938258,
+      "ci_high": 0.0515723874,
+      "statistic": 13.9491806553,
+      "p_value": 0.0,
+      "relative_lift": 0.4260550703,
+      "p_holm": 0.0,
+      "significant": true
+    }
+  ],
+  "head_to_head": {
+    "metric": "spend",
+    "method": "welch",
+    "n_control": 21307,
+    "n_treatment": 21387,
+    "control_mean": 1.422616511,
+    "treatment_mean": 1.077201571,
+    "diff": -0.34541494,
+    "se": 0.1596174148,
+    "ci_low": -0.6582684303,
+    "ci_high": -0.0325614496,
+    "statistic": -2.1640178818,
+    "p_value": 0.0304686512,
+    "relative_lift": -0.2428025665,
+    "baseline_arm": "Mens E-Mail",
+    "compared_arm": "Womens E-Mail"
+  },
+  "variance_reduction": [
+    {
+      "arm": "Mens E-Mail",
+      "cuped": {
+        "metric": "spend",
+        "method": "cuped",
+        "n_control": 21306,
+        "n_treatment": 21307,
+        "control_mean": 0.6527893551,
+        "treatment_mean": 1.4202278545,
+        "diff": 0.7674384994,
+        "se": 0.1452150422,
+        "ci_low": 0.4828128538,
+        "ci_high": 1.0520641451,
+        "statistic": 5.2848416241,
+        "p_value": 1.265e-07,
+        "relative_lift": 1.1756296168,
+        "theta": 0.0012228965
+      },
+      "cuped_variance_reduction": 0.000437753,
+      "cuped_correlation": 0.020922547,
+      "regression": {
+        "metric": "spend",
+        "method": "regression_adjusted",
+        "n_control": 21306,
+        "n_treatment": 21307,
+        "control_mean": 0.6527893551,
+        "treatment_mean": 1.4196807489,
+        "diff": 0.7668913938,
+        "se": 0.1450667034,
+        "ci_low": 0.4825658797,
+        "ci_high": 1.0512169078,
+        "statistic": 5.2864742612,
+        "p_value": 1.247e-07,
+        "relative_lift": 1.1747915124
+      },
+      "regression_se_reduction": 0.0012382864
+    },
+    {
+      "arm": "Womens E-Mail",
+      "cuped": {
+        "metric": "spend",
+        "method": "cuped",
+        "n_control": 21306,
+        "n_treatment": 21387,
+        "control_mean": 0.6527893551,
+        "treatment_mean": 1.0754902783,
+        "diff": 0.4227009232,
+        "se": 0.1303082191,
+        "ci_low": 0.1672937916,
+        "ci_high": 0.6781080547,
+        "statistic": 3.2438546562,
+        "p_value": 0.0011802047,
+        "relative_lift": 0.6475303555,
+        "theta": 0.0010346513
+      },
+      "cuped_variance_reduction": 0.0003805963,
+      "cuped_correlation": 0.0195088786,
+      "regression": {
+        "metric": "spend",
+        "method": "regression_adjusted",
+        "n_control": 21306,
+        "n_treatment": 21387,
+        "control_mean": 0.6527893551,
+        "treatment_mean": 1.0774485233,
+        "diff": 0.4246591682,
+        "se": 0.1302236424,
+        "ci_low": 0.1694255191,
+        "ci_high": 0.6798928173,
+        "statistic": 3.260999004,
+        "p_value": 0.0011102043,
+        "relative_lift": 0.650530167
+      },
+      "regression_se_reduction": 0.0008379784
+    }
+  ],
+  "observed_power": {
+    "alpha_per_comparison": 0.025,
+    "power": 0.8,
+    "spend_sd_control": 11.5881996813,
+    "mde_spend": 0.3461400172,
+    "mde_conversion": 0.0022538127,
+    "mde_visit": 0.0092015143,
+    "power_at_observed_effect": {
+      "Mens E-Mail": 0.9999980378,
+      "Womens E-Mail": 0.938502246
+    }
+  },
+  "segments": {
+    "Mens E-Mail": [
+      {
+        "segment": "channel",
+        "level": "Multichannel",
+        "n_control": 2606,
+        "n_treatment": 2577,
+        "control_mean": 0.6157405986,
+        "treatment_mean": 1.8248700039,
+        "diff": 1.2091294053,
+        "ci_low": 0.3908133568,
+        "ci_high": 2.0274454537,
+        "p_value": 0.0037895857,
+        "p_holm": 0.0189479283,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "channel",
+        "level": "Phone",
+        "n_control": 9327,
+        "n_treatment": 9240,
+        "control_mean": 0.6444526643,
+        "treatment_mean": 1.2085270563,
+        "diff": 0.564074392,
+        "ci_low": 0.1611318695,
+        "ci_high": 0.9670169144,
+        "p_value": 0.0060773132,
+        "p_holm": 0.0243092529,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "channel",
+        "level": "Web",
+        "n_control": 9373,
+        "n_treatment": 9490,
+        "control_mean": 0.6713858957,
+        "treatment_mean": 1.5218345627,
+        "diff": 0.850448667,
+        "ci_low": 0.3971560274,
+        "ci_high": 1.3037413067,
+        "p_value": 0.0002363218,
+        "p_holm": 0.0023632177,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "newbie",
+        "level": "0",
+        "n_control": 10611,
+        "n_treatment": 10621,
+        "control_mean": 0.9353501084,
+        "treatment_mean": 1.5133170135,
+        "diff": 0.5779669051,
+        "ci_low": 0.1415672769,
+        "ci_high": 1.0143665333,
+        "p_value": 0.0094404245,
+        "p_holm": 0.0243092529,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "newbie",
+        "level": "1",
+        "n_control": 10695,
+        "n_treatment": 10686,
+        "control_mean": 0.3724478728,
+        "treatment_mean": 1.3324677148,
+        "diff": 0.9600198419,
+        "ci_low": 0.5937689318,
+        "ci_high": 1.326270752,
+        "p_value": 2.812e-07,
+        "p_holm": 3.0937e-06,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "purchase_line",
+        "level": "both",
+        "n_control": 2149,
+        "n_treatment": 2181,
+        "control_mean": 1.1801442531,
+        "treatment_mean": 3.005130674,
+        "diff": 1.8249864209,
+        "ci_low": 0.4897109099,
+        "ci_high": 3.1602619318,
+        "p_value": 0.0074028466,
+        "p_holm": 0.0243092529,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "purchase_line",
+        "level": "mens_only",
+        "n_control": 9638,
+        "n_treatment": 9558,
+        "control_mean": 0.695426437,
+        "treatment_mean": 1.3781617493,
+        "diff": 0.6827353123,
+        "ci_low": 0.2471412626,
+        "ci_high": 1.118329362,
+        "p_value": 0.0021282218,
+        "p_holm": 0.0127693308,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "purchase_line",
+        "level": "womens_only",
+        "n_control": 9519,
+        "n_treatment": 9568,
+        "control_mean": 0.4905641349,
+        "treatment_mean": 1.1062949415,
+        "diff": 0.6157308066,
+        "ci_low": 0.269651529,
+        "ci_high": 0.9618100842,
+        "p_value": 0.0004891359,
+        "p_holm": 0.0041429173,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "zip_code",
+        "level": "Rural",
+        "n_control": 3139,
+        "n_treatment": 3243,
+        "control_mean": 0.7671360306,
+        "treatment_mean": 1.5226364477,
+        "diff": 0.7555004172,
+        "ci_low": 0.05077344,
+        "ci_high": 1.4602273943,
+        "p_value": 0.0356307474,
+        "p_holm": 0.0356307474,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "zip_code",
+        "level": "Surburban",
+        "n_control": 9625,
+        "n_treatment": 9501,
+        "control_mean": 0.6694420779,
+        "treatment_mean": 1.47329018,
+        "diff": 0.8038481021,
+        "ci_low": 0.3541236109,
+        "ci_high": 1.2535725933,
+        "p_value": 0.0004603241,
+        "p_holm": 0.0041429173,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "zip_code",
+        "level": "Urban",
+        "n_control": 8542,
+        "n_treatment": 8563,
+        "control_mean": 0.5920053852,
+        "treatment_mean": 1.3285122037,
+        "diff": 0.7365068185,
+        "ci_low": 0.3109552241,
+        "ci_high": 1.162058413,
+        "p_value": 0.0006946326,
+        "p_holm": 0.0048624284,
+        "significant": true,
+        "harm": false
+      }
+    ],
+    "Womens E-Mail": [
+      {
+        "segment": "channel",
+        "level": "Multichannel",
+        "n_control": 2606,
+        "n_treatment": 2579,
+        "control_mean": 0.6157405986,
+        "treatment_mean": 1.7732764637,
+        "diff": 1.1575358651,
+        "ci_low": 0.2585842737,
+        "ci_high": 2.0564874565,
+        "p_value": 0.0116254727,
+        "p_holm": 0.0930037816,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "channel",
+        "level": "Phone",
+        "n_control": 9327,
+        "n_treatment": 9454,
+        "control_mean": 0.6444526643,
+        "treatment_mean": 0.8769261688,
+        "diff": 0.2324735045,
+        "ci_low": -0.1192227911,
+        "ci_high": 0.5841698001,
+        "p_value": 0.1951180447,
+        "p_holm": 0.8733404519,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "channel",
+        "level": "Web",
+        "n_control": 9373,
+        "n_treatment": 9354,
+        "control_mean": 0.6713858957,
+        "treatment_mean": 1.0877025871,
+        "diff": 0.4163166915,
+        "ci_low": 0.0245343672,
+        "ci_high": 0.8080990158,
+        "p_value": 0.0372797525,
+        "p_holm": 0.2609582675,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "newbie",
+        "level": "0",
+        "n_control": 10611,
+        "n_treatment": 10624,
+        "control_mean": 0.9353501084,
+        "treatment_mean": 1.0493072289,
+        "diff": 0.1139571205,
+        "ci_low": -0.2754905923,
+        "ci_high": 0.5034048334,
+        "p_value": 0.5662838557,
+        "p_holm": 1.0,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "newbie",
+        "level": "1",
+        "n_control": 10695,
+        "n_treatment": 10763,
+        "control_mean": 0.3724478728,
+        "treatment_mean": 1.1047356685,
+        "diff": 0.7322877957,
+        "ci_low": 0.4011753135,
+        "ci_high": 1.0634002778,
+        "p_value": 1.46633e-05,
+        "p_holm": 0.0001612959,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "purchase_line",
+        "level": "both",
+        "n_control": 2149,
+        "n_treatment": 2118,
+        "control_mean": 1.1801442531,
+        "treatment_mean": 1.3420254958,
+        "diff": 0.1618812426,
+        "ci_low": -0.8136140815,
+        "ci_high": 1.1373765667,
+        "p_value": 0.744936753,
+        "p_holm": 1.0,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "purchase_line",
+        "level": "mens_only",
+        "n_control": 9638,
+        "n_treatment": 9622,
+        "control_mean": 0.695426437,
+        "treatment_mean": 0.9737809187,
+        "diff": 0.2783544817,
+        "ci_low": -0.1235884365,
+        "ci_high": 0.6802973999,
+        "p_value": 0.1746680904,
+        "p_holm": 0.8733404519,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "purchase_line",
+        "level": "womens_only",
+        "n_control": 9519,
+        "n_treatment": 9647,
+        "control_mean": 0.4905641349,
+        "treatment_mean": 1.1222120867,
+        "diff": 0.6316479518,
+        "ci_low": 0.2951086911,
+        "ci_high": 0.9681872125,
+        "p_value": 0.0002349794,
+        "p_holm": 0.0023497943,
+        "significant": true,
+        "harm": false
+      },
+      {
+        "segment": "zip_code",
+        "level": "Rural",
+        "n_control": 3139,
+        "n_treatment": 3181,
+        "control_mean": 0.7671360306,
+        "treatment_mean": 1.2819773656,
+        "diff": 0.514841335,
+        "ci_low": -0.1196781119,
+        "ci_high": 1.1493607819,
+        "p_value": 0.1117484746,
+        "p_holm": 0.6704908475,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "zip_code",
+        "level": "Surburban",
+        "n_control": 9625,
+        "n_treatment": 9650,
+        "control_mean": 0.6694420779,
+        "treatment_mean": 0.8466134715,
+        "diff": 0.1771713936,
+        "ci_low": -0.1936104214,
+        "ci_high": 0.5479532086,
+        "p_value": 0.3489799425,
+        "p_holm": 1.0,
+        "significant": false,
+        "harm": false
+      },
+      {
+        "segment": "zip_code",
+        "level": "Urban",
+        "n_control": 8542,
+        "n_treatment": 8556,
+        "control_mean": 0.5920053852,
+        "treatment_mean": 1.26114072,
+        "diff": 0.6691353348,
+        "ci_low": 0.2482296056,
+        "ci_high": 1.090041064,
+        "p_value": 0.0018360443,
+        "p_holm": 0.0165243989,
+        "significant": true,
+        "harm": false
+      }
+    ]
+  },
+  "economics": {
+    "Mens E-Mail": {
+      "revenue_lift_per_customer": 0.7698271559,
+      "revenue_lift_ci": [
+        0.4962689821,
+        1.0565483615
+      ],
+      "gross_margin": 0.4,
+      "cost_per_email": 0.05,
+      "net_profit_per_customer": 0.2579308624,
+      "net_profit_ci": [
+        0.1485075928,
+        0.3726193446
+      ],
+      "break_even_margin": 0.0649496444,
+      "return_per_dollar": 6.1586172472,
+      "rollout_customers": 100000,
+      "net_profit_at_rollout": 25793.0862357815
+    },
+    "Womens E-Mail": {
+      "revenue_lift_per_customer": 0.4244122159,
+      "revenue_lift_ci": [
+        0.1660962108,
+        0.6831946533
+      ],
+      "gross_margin": 0.4,
+      "cost_per_email": 0.05,
+      "net_profit_per_customer": 0.1197648864,
+      "net_profit_ci": [
+        0.0164384843,
+        0.2232778613
+      ],
+      "break_even_margin": 0.1178099926,
+      "return_per_dollar": 3.3952977275,
+      "rollout_customers": 100000,
+      "net_profit_at_rollout": 11976.4886374639
+    }
+  },
+  "assumptions": {
+    "gross_margin": 0.4,
+    "cost_per_email": 0.05,
+    "rollout_customers": 100000
+  },
+  "decision": {
+    "arms": [
+      {
+        "arm": "Mens E-Mail",
+        "validity_passed": true,
+        "primary_significant_positive": true,
+        "winsorized_agrees": true,
+        "no_segment_harm": true,
+        "profitable": true,
+        "qualifies": true,
+        "failed": []
+      },
+      {
+        "arm": "Womens E-Mail",
+        "validity_passed": true,
+        "primary_significant_positive": true,
+        "winsorized_agrees": true,
+        "no_segment_harm": true,
+        "profitable": true,
+        "qualifies": true,
+        "failed": []
+      }
+    ],
+    "recommended_arm": "Mens E-Mail"
+  },
+  "peeking": {
+    "base_rate": 0.0057260865,
+    "n_per_arm": 21000,
+    "n_simulations": 2000,
+    "alpha": 0.05,
+    "looks": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20
+    ],
+    "false_positive_rate": [
+      0.0455,
+      0.083,
+      0.104,
+      0.136,
+      0.191,
+      0.2305
+    ],
+    "bonferroni_false_positive_rate": [
+      0.0455,
+      0.0435,
+      0.04,
+      0.0315,
+      0.0205,
+      0.012
+    ],
+    "mc_standard_error": 0.0048733972
+  },
+  "uplift": {
+    "treatment_arm": "Womens E-Mail",
+    "outcome": "visit",
+    "n_train": 29885,
+    "n_test": 12808,
+    "qini_coefficient": 0.2325150596,
+    "top_fraction": 0.3,
+    "top_share_of_incremental": 0.550493854,
+    "deciles": [
+      {
+        "bin": 1,
+        "mean_predicted_uplift": 0.0838136017,
+        "n_treated": 642,
+        "n_control": 639,
+        "treated_rate": 0.2165109034,
+        "control_rate": 0.1236306729,
+        "observed_uplift": 0.0928802305
+      },
+      {
+        "bin": 2,
+        "mean_predicted_uplift": 0.0774984434,
+        "n_treated": 632,
+        "n_control": 649,
+        "treated_rate": 0.1946202532,
+        "control_rate": 0.124807396,
+        "observed_uplift": 0.0698128572
+      },
+      {
+        "bin": 3,
+        "mean_predicted_uplift": 0.0734666572,
+        "n_treated": 638,
+        "n_control": 643,
+        "treated_rate": 0.1896551724,
+        "control_rate": 0.1026438569,
+        "observed_uplift": 0.0870113155
+      },
+      {
+        "bin": 4,
+        "mean_predicted_uplift": 0.0687383693,
+        "n_treated": 656,
+        "n_control": 624,
+        "treated_rate": 0.1661585366,
+        "control_rate": 0.0913461538,
+        "observed_uplift": 0.0748123827
+      },
+      {
+        "bin": 5,
+        "mean_predicted_uplift": 0.0629313735,
+        "n_treated": 660,
+        "n_control": 621,
+        "treated_rate": 0.1439393939,
+        "control_rate": 0.0789049919,
+        "observed_uplift": 0.065034402
+      },
+      {
+        "bin": 6,
+        "mean_predicted_uplift": 0.037780114,
+        "n_treated": 644,
+        "n_control": 637,
+        "treated_rate": 0.1413043478,
+        "control_rate": 0.0926216641,
+        "observed_uplift": 0.0486826838
+      },
+      {
+        "bin": 7,
+        "mean_predicted_uplift": 0.0211373712,
+        "n_treated": 641,
+        "n_control": 639,
+        "treated_rate": 0.0842433697,
+        "control_rate": 0.0453834116,
+        "observed_uplift": 0.0388599582
+      },
+      {
+        "bin": 8,
+        "mean_predicted_uplift": 0.0176946068,
+        "n_treated": 607,
+        "n_control": 674,
+        "treated_rate": 0.097199341,
+        "control_rate": 0.0860534125,
+        "observed_uplift": 0.0111459286
+      },
+      {
+        "bin": 9,
+        "mean_predicted_uplift": 0.0120990695,
+        "n_treated": 646,
+        "n_control": 635,
+        "treated_rate": 0.1068111455,
+        "control_rate": 0.1212598425,
+        "observed_uplift": -0.014448697
+      },
+      {
+        "bin": 10,
+        "mean_predicted_uplift": -0.0037949339,
+        "n_treated": 650,
+        "n_control": 631,
+        "treated_rate": 0.1707692308,
+        "control_rate": 0.1965134707,
+        "observed_uplift": -0.0257442399
+      }
+    ],
+    "qini_curve": [
+      {
+        "fraction_targeted": 0.0,
+        "incremental": 0.0
+      },
+      {
+        "fraction_targeted": 0.004996877,
+        "incremental": 6.6
+      },
+      {
+        "fraction_targeted": 0.0099937539,
+        "incremental": 8.6825396825
+      },
+      {
+        "fraction_targeted": 0.0149906309,
+        "incremental": 10.8666666667
+      },
+      {
+        "fraction_targeted": 0.0199875078,
+        "incremental": 9.2926829268
+      },
+      {
+        "fraction_targeted": 0.0249843848,
+        "incremental": 7.2631578947
+      },
+      {
+        "fraction_targeted": 0.0299812617,
+        "incremental": 6.7540983607
+      },
+      {
+        "fraction_targeted": 0.0349781387,
+        "incremental": 8.0666666667
+      },
+      {
+        "fraction_targeted": 0.0399750156,
+        "incremental": 11.6131687243
+      },
+      {
+        "fraction_targeted": 0.0449718926,
+        "incremental": 15.9345454545
+      },
+      {
+        "fraction_targeted": 0.0499687695,
+        "incremental": 16.5163398693
+      },
+      {
+        "fraction_targeted": 0.0549656465,
+        "incremental": 19.2711370262
+      },
+      {
+        "fraction_targeted": 0.0599625234,
+        "incremental": 19.8
+      },
+      {
+        "fraction_targeted": 0.0649594004,
+        "incremental": 24.3022113022
+      },
+      {
+        "fraction_targeted": 0.0699562773,
+        "incremental": 27.2895927602
+      },
+      {
+        "fraction_targeted": 0.0749531543,
+        "incremental": 38.8907563025
+      },
+      {
+        "fraction_targeted": 0.0799500312,
+        "incremental": 38.9133858268
+      },
+      {
+        "fraction_targeted": 0.0849469082,
+        "incremental": 46.0510948905
+      },
+      {
+        "fraction_targeted": 0.0899437851,
+        "incremental": 51.7391304348
+      },
+      {
+        "fraction_targeted": 0.0949406621,
+        "incremental": 56.498349835
+      },
+      {
+        "fraction_targeted": 0.099937539,
+        "incremental": 59.5047021944
+      },
+      {
+        "fraction_targeted": 0.104934416,
+        "incremental": 58.7466467958
+      },
+      {
+        "fraction_targeted": 0.1099312929,
+        "incremental": 63.9830508475
+      },
+      {
+        "fraction_targeted": 0.1149281699,
+        "incremental": 63.0
+      },
+      {
+        "fraction_targeted": 0.1199250468,
+        "incremental": 58.7859922179
+      },
+      {
+        "fraction_targeted": 0.1249219238,
+        "incremental": 57.2919254658
+      },
+      {
+        "fraction_targeted": 0.1299188007,
+        "incremental": 58.5083932854
+      },
+      {
+        "fraction_targeted": 0.1349156777,
+        "incremental": 60.4849187935
+      },
+      {
+        "fraction_targeted": 0.1399125547,
+        "incremental": 64.254180602
+      },
+      {
+        "fraction_targeted": 0.1449094316,
+        "incremental": 66.2475675676
+      },
+      {
+        "fraction_targeted": 0.1499063086,
+        "incremental": 70.4989561587
+      },
+      {
+        "fraction_targeted": 0.1549031855,
+        "incremental": 72.0
+      },
+      {
+        "fraction_targeted": 0.1599000625,
+        "incremental": 73.5147928994
+      },
+      {
+        "fraction_targeted": 0.1648969394,
+        "incremental": 78.0923076923
+      },
+      {
+        "fraction_targeted": 0.1698938164,
+        "incremental": 80.0444444444
+      },
+      {
+        "fraction_targeted": 0.1748906933,
+        "incremental": 90.0250896057
+      },
+      {
+        "fraction_targeted": 0.1798875703,
+        "incremental": 94.7707061901
+      },
+      {
+        "fraction_targeted": 0.1848844472,
+        "incremental": 101.7786259542
+      },
+      {
+        "fraction_targeted": 0.1898813242,
+        "incremental": 99.7432321575
+      },
+      {
+        "fraction_targeted": 0.1948782011,
+        "incremental": 101.5024
+      },
+      {
+        "fraction_targeted": 0.1998750781,
+        "incremental": 103.4930015552
+      },
+      {
+        "fraction_targeted": 0.204871955,
+        "incremental": 101.7482889734
+      },
+      {
+        "fraction_targeted": 0.209868832,
+        "incremental": 105.23795404
+      },
+      {
+        "fraction_targeted": 0.2148657089,
+        "incremental": 115.2440087146
+      },
+      {
+        "fraction_targeted": 0.2198625859,
+        "incremental": 119.2782918149
+      },
+      {
+        "fraction_targeted": 0.2248594628,
+        "incremental": 116.7567755386
+      },
+      {
+        "fraction_targeted": 0.2298563398,
+        "incremental": 126.760707002
+      },
+      {
+        "fraction_targeted": 0.2348532167,
+        "incremental": 129.4833997344
+      },
+      {
+        "fraction_targeted": 0.2398500937,
+        "incremental": 132.2381262199
+      },
+      {
+        "fraction_targeted": 0.2448469706,
+        "incremental": 133.8984771574
+      },
+      {
+        "fraction_targeted": 0.2498438476,
+        "incremental": 133.9004975124
+      },
+      {
+        "fraction_targeted": 0.2548407245,
+        "incremental": 133.6244674376
+      },
+      {
+        "fraction_targeted": 0.2598376015,
+        "incremental": 136.141063957
+      },
+      {
+        "fraction_targeted": 0.2648344785,
+        "incremental": 136.3915592028
+      },
+      {
+        "fraction_targeted": 0.2698313554,
+        "incremental": 141.8689655172
+      },
+      {
+        "fraction_targeted": 0.2748282324,
+        "incremental": 143.8577878104
+      },
+      {
+        "fraction_targeted": 0.2798251093,
+        "incremental": 152.0681440443
+      },
+      {
+        "fraction_targeted": 0.2848219863,
+        "incremental": 155.7739130435
+      },
+      {
+        "fraction_targeted": 0.2898188632,
+        "incremental": 157.8137044968
+      },
+      {
+        "fraction_targeted": 0.2948157402,
+        "incremental": 160.2828601472
+      },
+      {
+        "fraction_targeted": 0.2998126171,
+        "incremental": 160.3316062176
+      },
+      {
+        "fraction_targeted": 0.3048094941,
+        "incremental": 162.1701584057
+      },
+      {
+        "fraction_targeted": 0.309806371,
+        "incremental": 159.8256513026
+      },
+      {
+        "fraction_targeted": 0.314803248,
+        "incremental": 161.9346534653
+      },
+      {
+        "fraction_targeted": 0.3198001249,
+        "incremental": 165.4663414634
+      },
+      {
+        "fraction_targeted": 0.3247970019,
+        "incremental": 171.6970715314
+      },
+      {
+        "fraction_targeted": 0.3297938788,
+        "incremental": 173.6784015224
+      },
+      {
+        "fraction_targeted": 0.3347907558,
+        "incremental": 178.4627285513
+      },
+      {
+        "fraction_targeted": 0.3397876327,
+        "incremental": 179.1623616236
+      },
+      {
+        "fraction_targeted": 0.3447845097,
+        "incremental": 182.496586254
+      },
+      {
+        "fraction_targeted": 0.3497813866,
+        "incremental": 182.0345756623
+      },
+      {
+        "fraction_targeted": 0.3547782636,
+        "incremental": 181.1766784452
+      },
+      {
+        "fraction_targeted": 0.3597751405,
+        "incremental": 184.2670157068
+      },
+      {
+        "fraction_targeted": 0.3647720175,
+        "incremental": 188.6006031883
+      },
+      {
+        "fraction_targeted": 0.3697688944,
+        "incremental": 191.5265167586
+      },
+      {
+        "fraction_targeted": 0.3747657714,
+        "incremental": 193.872651357
+      },
+      {
+        "fraction_targeted": 0.3797626483,
+        "incremental": 195.4486442071
+      },
+      {
+        "fraction_targeted": 0.3847595253,
+        "incremental": 193.6525630594
+      },
+      {
+        "fraction_targeted": 0.3897564022,
+        "incremental": 202.2218662395
+      },
+      {
+        "fraction_targeted": 0.3947532792,
+        "incremental": 205.0
+      },
+      {
+        "fraction_targeted": 0.3997501562,
+        "incremental": 207.4481002742
+      },
+      {
+        "fraction_targeted": 0.4047470331,
+        "incremental": 207.1097372488
+      },
+      {
+        "fraction_targeted": 0.4097439101,
+        "incremental": 210.5575896262
+      },
+      {
+        "fraction_targeted": 0.414740787,
+        "incremental": 216.0211560257
+      },
+      {
+        "fraction_targeted": 0.419737664,
+        "incremental": 221.734006734
+      },
+      {
+        "fraction_targeted": 0.4247345409,
+        "incremental": 222.8637541651
+      },
+      {
+        "fraction_targeted": 0.4297314179,
+        "incremental": 225.5263157895
+      },
+      {
+        "fraction_targeted": 0.4347282948,
+        "incremental": 227.3382724973
+      },
+      {
+        "fraction_targeted": 0.4397251718,
+        "incremental": 231.0121341899
+      },
+      {
+        "fraction_targeted": 0.4447220487,
+        "incremental": 232.4442877292
+      },
+      {
+        "fraction_targeted": 0.4497189257,
+        "incremental": 233.6612059951
+      },
+      {
+        "fraction_targeted": 0.4547158026,
+        "incremental": 238.193503801
+      },
+      {
+        "fraction_targeted": 0.4597126796,
+        "incremental": 240.3990433891
+      },
+      {
+        "fraction_targeted": 0.4647095565,
+        "incremental": 240.0411883862
+      },
+      {
+        "fraction_targeted": 0.4697064335,
+        "incremental": 242.8526561978
+      },
+      {
+        "fraction_targeted": 0.4747033104,
+        "incremental": 243.4571617598
+      },
+      {
+        "fraction_targeted": 0.4797001874,
+        "incremental": 248.4980392157
+      },
+      {
+        "fraction_targeted": 0.4846970643,
+        "incremental": 250.6269867013
+      },
+      {
+        "fraction_targeted": 0.4896939413,
+        "incremental": 252.4680987496
+      },
+      {
+        "fraction_targeted": 0.4946908182,
+        "incremental": 253.2025437202
+      },
+      {
+        "fraction_targeted": 0.4996876952,
+        "incremental": 249.1387137453
+      },
+      {
+        "fraction_targeted": 0.5046845721,
+        "incremental": 249.7226733292
+      },
+      {
+        "fraction_targeted": 0.5096814491,
+        "incremental": 254.3465346535
+      },
+      {
+        "fraction_targeted": 0.514678326,
+        "incremental": 255.4166411747
+      },
+      {
+        "fraction_targeted": 0.519675203,
+        "incremental": 256.7962401455
+      },
+      {
+        "fraction_targeted": 0.52467208,
+        "incremental": 259.3839903701
+      },
+      {
+        "fraction_targeted": 0.5296689569,
+        "incremental": 266.0208768267
+      },
+      {
+        "fraction_targeted": 0.5346658339,
+        "incremental": 268.6044864227
+      },
+      {
+        "fraction_targeted": 0.5396627108,
+        "incremental": 272.7828371278
+      },
+      {
+        "fraction_targeted": 0.5446595878,
+        "incremental": 280.7189126663
+      },
+      {
+        "fraction_targeted": 0.5496564647,
+        "incremental": 276.7257142857
+      },
+      {
+        "fraction_targeted": 0.5546533417,
+        "incremental": 276.9450891594
+      },
+      {
+        "fraction_targeted": 0.5596502186,
+        "incremental": 272.800281294
+      },
+      {
+        "fraction_targeted": 0.5646470956,
+        "incremental": 272.5917456776
+      },
+      {
+        "fraction_targeted": 0.5696439725,
+        "incremental": 271.8874172185
+      },
+      {
+        "fraction_targeted": 0.5746408495,
+        "incremental": 273.6547945205
+      },
+      {
+        "fraction_targeted": 0.5796377264,
+        "incremental": 275.4985058408
+      },
+      {
+        "fraction_targeted": 0.5846346034,
+        "incremental": 275.9250673854
+      },
+      {
+        "fraction_targeted": 0.5896314803,
+        "incremental": 275.7693539776
+      },
+      {
+        "fraction_targeted": 0.5946283573,
+        "incremental": 275.8321438012
+      },
+      {
+        "fraction_targeted": 0.5996252342,
+        "incremental": 279.2560335782
+      },
+      {
+        "fraction_targeted": 0.6046221112,
+        "incremental": 278.6458658346
+      },
+      {
+        "fraction_targeted": 0.6096189881,
+        "incremental": 279.4704668558
+      },
+      {
+        "fraction_targeted": 0.6146158651,
+        "incremental": 281.4881043745
+      },
+      {
+        "fraction_targeted": 0.619612742,
+        "incremental": 279.5054554682
+      },
+      {
+        "fraction_targeted": 0.624609619,
+        "incremental": 281.7359536407
+      },
+      {
+        "fraction_targeted": 0.6296064959,
+        "incremental": 282.1608793405
+      },
+      {
+        "fraction_targeted": 0.6346033729,
+        "incremental": 281.1325062035
+      },
+      {
+        "fraction_targeted": 0.6396002498,
+        "incremental": 281.3561407827
+      },
+      {
+        "fraction_targeted": 0.6445971268,
+        "incremental": 282.1900341964
+      },
+      {
+        "fraction_targeted": 0.6495940037,
+        "incremental": 284.6434108527
+      },
+      {
+        "fraction_targeted": 0.6545908807,
+        "incremental": 287.6842737095
+      },
+      {
+        "fraction_targeted": 0.6595877577,
+        "incremental": 287.3028571429
+      },
+      {
+        "fraction_targeted": 0.6645846346,
+        "incremental": 288.533664068
+      },
+      {
+        "fraction_targeted": 0.6695815116,
+        "incremental": 289.3621013133
+      },
+      {
+        "fraction_targeted": 0.6745783885,
+        "incremental": 289.0153882024
+      },
+      {
+        "fraction_targeted": 0.6795752655,
+        "incremental": 291.4803149606
+      },
+      {
+        "fraction_targeted": 0.6845721424,
+        "incremental": 295.0748908799
+      },
+      {
+        "fraction_targeted": 0.6895690194,
+        "incremental": 299.103990878
+      },
+      {
+        "fraction_targeted": 0.6945658963,
+        "incremental": 304.3695898482
+      },
+      {
+        "fraction_targeted": 0.6995627733,
+        "incremental": 307.3505617978
+      },
+      {
+        "fraction_targeted": 0.7045596502,
+        "incremental": 306.3641231593
+      },
+      {
+        "fraction_targeted": 0.7095565272,
+        "incremental": 310.1887879459
+      },
+      {
+        "fraction_targeted": 0.7145534041,
+        "incremental": 308.5533318672
+      },
+      {
+        "fraction_targeted": 0.7195502811,
+        "incremental": 310.9430255403
+      },
+      {
+        "fraction_targeted": 0.724547158,
+        "incremental": 312.7158327919
+      },
+      {
+        "fraction_targeted": 0.729544035,
+        "incremental": 313.9894510226
+      },
+      {
+        "fraction_targeted": 0.7345409119,
+        "incremental": 306.9313662604
+      },
+      {
+        "fraction_targeted": 0.7395377889,
+        "incremental": 303.4770797963
+      },
+      {
+        "fraction_targeted": 0.7445346658,
+        "incremental": 305.0539287971
+      },
+      {
+        "fraction_targeted": 0.7495315428,
+        "incremental": 305.423342397
+      },
+      {
+        "fraction_targeted": 0.7545284197,
+        "incremental": 308.6860054065
+      },
+      {
+        "fraction_targeted": 0.7595252967,
+        "incremental": 306.3192808431
+      },
+      {
+        "fraction_targeted": 0.7645221736,
+        "incremental": 307.08
+      },
+      {
+        "fraction_targeted": 0.7695190506,
+        "incremental": 308.7047910296
+      },
+      {
+        "fraction_targeted": 0.7745159275,
+        "incremental": 308.0161812298
+      },
+      {
+        "fraction_targeted": 0.7795128045,
+        "incremental": 307.3844917638
+      },
+      {
+        "fraction_targeted": 0.7845096814,
+        "incremental": 310.8356301178
+      },
+      {
+        "fraction_targeted": 0.7895065584,
+        "incremental": 311.9591674926
+      },
+      {
+        "fraction_targeted": 0.7945034354,
+        "incremental": 313.4430678466
+      },
+      {
+        "fraction_targeted": 0.7995003123,
+        "incremental": 312.7462919594
+      },
+      {
+        "fraction_targeted": 0.8044971893,
+        "incremental": 311.3052917232
+      },
+      {
+        "fraction_targeted": 0.8094940662,
+        "incremental": 309.3107301098
+      },
+      {
+        "fraction_targeted": 0.8144909432,
+        "incremental": 309.5038284839
+      },
+      {
+        "fraction_targeted": 0.8194878201,
+        "incremental": 309.749428789
+      },
+      {
+        "fraction_targeted": 0.8244846971,
+        "incremental": 311.8132222012
+      },
+      {
+        "fraction_targeted": 0.829481574,
+        "incremental": 308.3763643207
+      },
+      {
+        "fraction_targeted": 0.834478451,
+        "incremental": 309.4349372777
+      },
+      {
+        "fraction_targeted": 0.8394753279,
+        "incremental": 313.2479523455
+      },
+      {
+        "fraction_targeted": 0.8444722049,
+        "incremental": 310.4859259259
+      },
+      {
+        "fraction_targeted": 0.8494690818,
+        "incremental": 312.2997606334
+      },
+      {
+        "fraction_targeted": 0.8544659588,
+        "incremental": 311.3528765115
+      },
+      {
+        "fraction_targeted": 0.8594628357,
+        "incremental": 312.9795918367
+      },
+      {
+        "fraction_targeted": 0.8644597127,
+        "incremental": 312.9797101449
+      },
+      {
+        "fraction_targeted": 0.8694565896,
+        "incremental": 312.214852199
+      },
+      {
+        "fraction_targeted": 0.8744534666,
+        "incremental": 313.391327719
+      },
+      {
+        "fraction_targeted": 0.8794503435,
+        "incremental": 308.3645109567
+      },
+      {
+        "fraction_targeted": 0.8844472205,
+        "incremental": 306.4611032532
+      },
+      {
+        "fraction_targeted": 0.8894440974,
+        "incremental": 306.6563543681
+      },
+      {
+        "fraction_targeted": 0.8944409744,
+        "incremental": 306.0354709069
+      },
+      {
+        "fraction_targeted": 0.8994378513,
+        "incremental": 304.4215737363
+      },
+      {
+        "fraction_targeted": 0.9044347283,
+        "incremental": 307.8447977878
+      },
+      {
+        "fraction_targeted": 0.9094316052,
+        "incremental": 305.2479793637
+      },
+      {
+        "fraction_targeted": 0.9144284822,
+        "incremental": 309.463631696
+      },
+      {
+        "fraction_targeted": 0.9194253592,
+        "incremental": 302.8250808235
+      },
+      {
+        "fraction_targeted": 0.9244222361,
+        "incremental": 301.8182433576
+      },
+      {
+        "fraction_targeted": 0.9294191131,
+        "incremental": 303.0237493684
+      },
+      {
+        "fraction_targeted": 0.93441599,
+        "incremental": 302.6063242429
+      },
+      {
+        "fraction_targeted": 0.939412867,
+        "incremental": 300.1991010488
+      },
+      {
+        "fraction_targeted": 0.9444097439,
+        "incremental": 303.3940298507
+      },
+      {
+        "fraction_targeted": 0.9494066209,
+        "incremental": 299.3714945563
+      },
+      {
+        "fraction_targeted": 0.9544034978,
+        "incremental": 299.1644510094
+      },
+      {
+        "fraction_targeted": 0.9594003748,
+        "incremental": 298.9654385393
+      },
+      {
+        "fraction_targeted": 0.9643972517,
+        "incremental": 297.9565358417
+      },
+      {
+        "fraction_targeted": 0.9693941287,
+        "incremental": 299.7080103359
+      },
+      {
+        "fraction_targeted": 0.9743910056,
+        "incremental": 292.8771084337
+      },
+      {
+        "fraction_targeted": 0.9793878826,
+        "incremental": 291.0648769575
+      },
+      {
+        "fraction_targeted": 0.9843847595,
+        "incremental": 290.7861234882
+      },
+      {
+        "fraction_targeted": 0.9893816365,
+        "incremental": 287.4003798069
+      },
+      {
+        "fraction_targeted": 0.9943785134,
+        "incremental": 290.8314182276
+      },
+      {
+        "fraction_targeted": 0.9993753904,
+        "incremental": 290.4527238572
+      },
+      {
+        "fraction_targeted": 1.0,
+        "incremental": 289.450563204
+      }
+    ]
+  }
+}

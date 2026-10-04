@@ -7,7 +7,6 @@ margin at which sending the email stops paying for itself.
 
 from __future__ import annotations
 
-import math
 from dataclasses import asdict, dataclass
 
 
@@ -41,10 +40,9 @@ def campaign_economics(
     low, high = sorted(lift_ci)
     net = gross_margin * lift - cost_per_email
     net_ci = (gross_margin * low - cost_per_email, gross_margin * high - cost_per_email)
-    # Break-even only exists when the email raises revenue at all.
+    # Break-even only exists when the email raises revenue at all. A value
+    # above 1 means no achievable margin covers the cost of sending.
     break_even = cost_per_email / lift if lift > 0 else None
-    if break_even is not None and break_even > 1:
-        break_even = math.inf
     per_dollar = (gross_margin * lift) / cost_per_email if cost_per_email > 0 else None
     return Economics(
         revenue_lift_per_customer=lift,

@@ -65,5 +65,12 @@ uplift:
   seed: 42
   n_bins: 10
 
+posthoc:
+  # NOT pre-registered. Added after the analysis showed the source file is
+  # top-coded at $499, which makes the planned 99th-percentile cap equal the
+  # maximum (a non-binding check). Reported separately, never used for the
+  # decision.
+  winsorize_quantile: 0.95
+
 report:
   output_dir: "reports"

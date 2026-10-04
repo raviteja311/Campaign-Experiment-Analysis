@@ -141,7 +141,9 @@ def test_economics_without_a_lift_has_no_break_even():
 
 
 def test_economics_tiny_lift_never_breaks_even():
-    assert campaign_economics(0.01, (0.0, 0.02), 0.4, 0.05, 1).break_even_margin == math.inf
+    assert campaign_economics(0.01, (0.0, 0.02), 0.4, 0.05, 1).break_even_margin == pytest.approx(
+        5.0
+    )
 
 
 def test_economics_rejects_bad_assumptions():

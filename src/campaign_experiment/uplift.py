@@ -75,15 +75,21 @@ def qini_curve(score: np.ndarray, treated: np.ndarray, y: np.ndarray) -> pd.Data
 
 
 def qini_coefficient(curve: pd.DataFrame) -> float:
-    """Area between the model's Qini curve and random targeting, per customer.
+    """Area between the model's Qini curve and random targeting, normalised.
 
     Random targeting is the straight line from 0 to the total incremental
-    outcome. Positive means the ranking beats random; zero means no better.
+    outcome. The area between the two curves is divided by the total
+    incremental outcome, so the coefficient is unit-free: 0 means no better
+    than random, positive means the ranking finds responders first, and it
+    is comparable across outcomes and sample sizes.
     """
     x = curve["fraction_targeted"].to_numpy()
     q = curve["incremental"].to_numpy()
-    random_line = x * q[-1]
-    return float(np.trapezoid(q - random_line, x))
+    total = q[-1]
+    if total == 0:
+        return 0.0
+    random_line = x * total
+    return float(np.trapezoid(q - random_line, x) / abs(total))
 
 
 def decile_table(
