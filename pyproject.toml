@@ -16,6 +16,9 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+campaign_experiment = ["sql/*.sql"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"
