@@ -257,6 +257,7 @@ def run_analysis(cfg: Config, df: pd.DataFrame) -> dict[str, Any]:
             "balance": balance.to_dict(orient="records"),
             "max_abs_smd": float(balance["smd"].abs().max()),
             "all_balanced": bool(balance["balanced"].all()),
+            "smd_threshold": exp.balance_smd_threshold,
         },
         "primary": primary,
         "winsorized": winsorized,

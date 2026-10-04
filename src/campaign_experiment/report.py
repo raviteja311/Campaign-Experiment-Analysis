@@ -74,6 +74,11 @@ def _by_arm(rows: list[dict], arm: str, metric: str | None = None) -> dict:
     return next(r for r in rows if r["arm"] == arm and (metric is None or r["metric"] == metric))
 
 
+def _per_arm_per_bin(deciles: list[dict]) -> int:
+    counts = [d["n_treated"] for d in deciles] + [d["n_control"] for d in deciles]
+    return round(sum(counts) / len(counts))
+
+
 def _break_even(econ: dict) -> str:
     be = econ["break_even_margin"]
     if be is None:
@@ -92,7 +97,6 @@ def decision_memo(r: dict[str, Any]) -> str:
     econ = r["economics"]
     a = r["assumptions"]
     h2h = r["head_to_head"]
-    srm = r["validity"]["srm"]
 
     lines = ["# Decision Memo: Email Campaign Rollout", ""]
     if rec:
@@ -142,10 +146,7 @@ def decision_memo(r: dict[str, Any]) -> str:
         "",
         "## Why the result can be trusted",
         "",
-        "- Assignment worked: arm sizes match the planned 1/3 split "
-        f"(SRM p {pval(srm['p_value'])}), "
-        f"and every pre-period covariate is balanced (largest |SMD| "
-        f"{r['validity']['max_abs_smd']:.3f}, threshold 0.1).",
+        _validity_line(r),
         "- Metrics, tests, thresholds and this decision rule were committed in "
         "`docs/TEST_PLAN.md` before any outcome was analysed.",
         _robustness_line(r),
@@ -167,6 +168,26 @@ def decision_memo(r: dict[str, Any]) -> str:
     ]
     lines += _next_test(r)
     return "\n".join(lines) + "\n"
+
+
+def _validity_line(r: dict[str, Any]) -> str:
+    """Report the validity checks as they came out, never as assumed."""
+    v = r["validity"]
+    srm = v["srm"]
+    ratio = (
+        f"arm sizes match the planned allocation (SRM p {pval(srm['p_value'])})"
+        if srm["passed"]
+        else f"**SAMPLE RATIO MISMATCH** (SRM p {pval(srm['p_value'])}): estimates are unreliable"
+    )
+    balance = (
+        "every pre-period covariate is balanced"
+        if v["all_balanced"]
+        else "**some pre-period covariates are imbalanced**"
+    )
+    return (
+        f"- Assignment check: {ratio}; {balance} (largest |SMD| {v['max_abs_smd']:.3f}, "
+        f"threshold {v['smd_threshold']})."
+    )
 
 
 def _robustness_line(r: dict[str, Any]) -> str:
@@ -580,8 +601,9 @@ def full_report(r: dict[str, Any]) -> str:
             ],
         ),
         "",
-        "Per-decile uplifts rest on about 640 customers per arm each, so a single decile's "
-        "value is noisy; the ordering across deciles is the evidence, not any one bar.",
+        f"Each decile holds about {_per_arm_per_bin(up['deciles']):,} customers per arm, so a "
+        "single decile's value is noisy; the ordering across deciles is the evidence, not any "
+        "one bar.",
         "",
         "## 14. Deviations from the plan",
         "",
@@ -592,8 +614,9 @@ def full_report(r: dict[str, Any]) -> str:
     if not tc["planned_cap_binding"]:
         s.append(
             "2. After analysis the planned cap turned out to be non-binding because the source "
-            "is top-coded. A 95th-percentile cap was added as a clearly labelled post-hoc "
-            "sensitivity check. It is reported, and it is not used by the decision rule."
+            f"is top-coded. A cap at the {ordinal_pct(ph['quantile'])} was added as a clearly "
+            "labelled post-hoc sensitivity check. It is reported, and it is not used by the "
+            "decision rule."
         )
     return "\n".join(s) + "\n"
 
@@ -608,8 +631,12 @@ def write_outputs(results: dict[str, Any], out_dir: Path) -> dict[str, Path]:
         "report": out_dir / "REPORT.md",
         "memo": out_dir / "DECISION_MEMO.md",
     }
-    paths["results"].write_text(json.dumps(clean, indent=2) + "\n", encoding="utf-8")
-    paths["report"].write_text(full_report(clean), encoding="utf-8")
-    paths["memo"].write_text(decision_memo(clean), encoding="utf-8")
+    # newline="\n" so Windows and Linux write identical bytes.
+    for key, text in (
+        ("results", json.dumps(clean, indent=2) + "\n"),
+        ("report", full_report(clean)),
+        ("memo", decision_memo(clean)),
+    ):
+        paths[key].write_text(text, encoding="utf-8", newline="\n")
     render_all(clean, out_dir / "figures")
     return paths

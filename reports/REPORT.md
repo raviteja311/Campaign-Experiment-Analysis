@@ -174,9 +174,9 @@ T-learner (two logistic regressions on pre-period features) for the Womens E-Mai
 | 9 | +1.21 pp | 10.7% | 12.1% | -1.44 pp |
 | 10 | -0.38 pp | 17.1% | 19.7% | -2.57 pp |
 
-Per-decile uplifts rest on about 640 customers per arm each, so a single decile's value is noisy; the ordering across deciles is the evidence, not any one bar.
+Each decile holds about 640 customers per arm, so a single decile's value is noisy; the ordering across deciles is the evidence, not any one bar.
 
 ## 14. Deviations from the plan
 
 1. The winsorisation cap was clarified before analysis (the second commit to `docs/TEST_PLAN.md`), from the 99th percentile of all spend to the 99th percentile of positive spend.
-2. After analysis the planned cap turned out to be non-binding because the source is top-coded. A 95th-percentile cap was added as a clearly labelled post-hoc sensitivity check. It is reported, and it is not used by the decision rule.
+2. After analysis the planned cap turned out to be non-binding because the source is top-coded. A cap at the 95th percentile was added as a clearly labelled post-hoc sensitivity check. It is reported, and it is not used by the decision rule.

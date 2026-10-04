@@ -10,7 +10,7 @@
 
 ## Why the result can be trusted
 
-- Assignment worked: arm sizes match the planned 1/3 split (SRM p 0.9037), and every pre-period covariate is balanced (largest |SMD| 0.014, threshold 0.1).
+- Assignment check: arm sizes match the planned allocation (SRM p 0.9037); every pre-period covariate is balanced (largest |SMD| 0.014, threshold 0.1).
 - Metrics, tests, thresholds and this decision rule were committed in `docs/TEST_PLAN.md` before any outcome was analysed.
 - The lifts hold under a bootstrap interval and when spend is capped at $362.20 (a post-hoc check; see the report).
 

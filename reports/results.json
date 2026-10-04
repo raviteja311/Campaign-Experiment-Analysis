@@ -249,7 +249,8 @@
       }
     ],
     "max_abs_smd": 0.0136590004,
-    "all_balanced": true
+    "all_balanced": true,
+    "smd_threshold": 0.1
   },
   "primary": [
     {

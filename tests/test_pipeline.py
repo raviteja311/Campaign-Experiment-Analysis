@@ -104,3 +104,32 @@ def test_cli_reports_bad_config_without_traceback(tmp_path):
     bad = tmp_path / "params.yaml"
     bad.write_text("data: {}\n", encoding="utf-8")
     assert cli.main(["--params", str(bad), "plan"]) == 1
+
+
+def test_memo_reports_failed_validity_instead_of_assuming_it(results):
+    from campaign_experiment.report import decision_memo
+
+    broken = to_jsonable(results)
+    broken["validity"]["srm"]["passed"] = False
+    broken["validity"]["all_balanced"] = False
+    memo = decision_memo(broken)
+    assert "SAMPLE RATIO MISMATCH" in memo
+    assert "imbalanced" in memo
+    assert "every pre-period covariate is balanced" not in memo
+
+
+def test_outputs_use_lf_line_endings(results, tmp_path):
+    paths = write_outputs(results, tmp_path)
+    assert b"\r\n" not in paths["memo"].read_bytes()
+    assert b"\r\n" not in paths["results"].read_bytes()
+
+
+@pytest.mark.network
+def test_committed_reports_match_a_fresh_run(cfg, tmp_path):
+    """The committed numbers are exactly what the code produces from the real data."""
+    from campaign_experiment.data import load_dataset
+
+    fresh = write_outputs(run_analysis(cfg, load_dataset(cfg)), tmp_path)
+    committed = cfg.resolve(cfg.report.output_dir)
+    for key, path in fresh.items():
+        assert path.read_bytes() == (committed / path.name).read_bytes(), key
